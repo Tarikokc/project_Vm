@@ -1,7 +1,7 @@
 pipeline{
   agent any
   environment{
-    IMG_NAME = 'med-nginx'
+    IMG_NAME = 'myimage_nginx'
     DOCKER_REPO = 'test'
   }
   
@@ -16,7 +16,7 @@ pipeline{
       steps{
         git (
           branch: 'main',
-          url: 'https://github.com/SapaRandy/test.git'
+          url: 'https://github.com/Tarikokc/project_Vm.git'
         )
       }
     }
