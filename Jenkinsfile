@@ -35,8 +35,7 @@ pipeline{
           sh "docker stop monapp || true"
           sh "docker rm monapp || true"
           sh "docker run -d --name monapp --hostname monapp -p 8081:81 ${IMG_NAME}"
-          sh "docker exec -it monapp 'ifconfig'"
-        }
+          sh "docker exec -it monapp ifconfig"        }
       }
     }
 
