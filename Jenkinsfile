@@ -26,11 +26,9 @@ pipeline {
     stage("Deployment application") {
       steps {
         script {
-          // Stopping and removing containers safely
-          sh 'docker rm -f $(docker ps -a -q)' // Stops and removes all containers
-          
-          // Running the Docker container
-          sh 'docker run --name mon_app --hostname monapp -p 8081:81 myimage_nginx'
+          sh 'docker rm image mynginx'
+          sh 'docker rm -f $(docker ps -a)'
+          sh 'docker run --name mon app --hostname monapp -p 8081:81 myimage_ngnix'
         }
       }
     }
